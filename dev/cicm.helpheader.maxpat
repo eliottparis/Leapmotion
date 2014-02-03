@@ -232,8 +232,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 90.0, 268.0, 342.0, 20.0 ],
-					"text" : "patcherargs @obj-name hoa.library @obj-desc \" \" @width 480"
+					"patching_rect" : [ 90.0, 268.0, 346.0, 20.0 ],
+					"text" : "patcherargs @obj-name cicm.object @obj-desc \" \" @width 480"
 				}
 
 			}
@@ -343,7 +343,7 @@
 					"destination" : [ "obj-9", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 422.5, 323.5, 295.9375, 323.5 ],
+					"midpoints" : [ 426.5, 323.5, 295.9375, 323.5 ],
 					"source" : [ "obj-7", 1 ]
 				}
 
@@ -376,14 +376,7 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "leap.jpg",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/distrib/images",
-				"patcherrelativepath" : "./images",
-				"type" : "JPEG",
-				"implicit" : 1
-			}
- ]
+		"dependency_cache" : [  ]
 	}
 
 }

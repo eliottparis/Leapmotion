@@ -1672,7 +1672,17 @@
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 82.0, 98.0, 238.0, 20.0 ],
 									"saved_object_attributes" : 									{
-										"bgtracking" : 0
+										"bgtracking" : 0,
+										"circle_minarc" : -0.0,
+										"circle_minradius" : 0.0,
+										"keytap_historyseconds" : -0.0,
+										"keytap_mindistance" : 0.0,
+										"keytap_mindownvelocity" : 0.0,
+										"screentap_historyseconds" : -0.0,
+										"screentap_mindistance" : 0.0,
+										"screentap_minforwardvelocity" : 0.0,
+										"swipe_minlength" : 0.0,
+										"swipe_minvelocity" : 0.0
 									}
 ,
 									"text" : "cicm.leap"
@@ -4111,16 +4121,9 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "cicm.helpheader.maxpat",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/distrib",
+				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/dev",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "leap.jpg",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/distrib/images",
-				"patcherrelativepath" : "./images",
-				"type" : "JPEG",
 				"implicit" : 1
 			}
 , 			{

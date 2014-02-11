@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		2C1A10B4189EBCFF001D33B0 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */; };
 		2C50B78A189BF129003FC744 /* cicm.leap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C50B789189BF129003FC744 /* cicm.leap.cpp */; };
-		2C50B792189BF3BA003FC744 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C50B791189BF3BA003FC744 /* libLeap.dylib */; };
 		2C50B795189BF3C8003FC744 /* Leap.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C50B793189BF3C8003FC744 /* Leap.h */; };
-		2C50B799189C0570003FC744 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C50B791189BF3BA003FC744 /* libLeap.dylib */; };
+		2C6408F718A17A2400E376FF /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6408F618A17A2400E376FF /* libLeap.dylib */; };
+		2C6408F818A17B6700E376FF /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C6408F618A17A2400E376FF /* libLeap.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +21,7 @@
 			dstPath = Contents/MacOS;
 			dstSubfolderSpec = 1;
 			files = (
-				2C50B799189C0570003FC744 /* libLeap.dylib in CopyFiles */,
+				2C6408F818A17B6700E376FF /* libLeap.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,8 +31,8 @@
 		2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../SDKs/MaxSDK-6.1.4/c74support/max-includes/x64/MaxAPI.framework"; sourceTree = "<group>"; };
 		2C50B787189BEEAE003FC744 /* max-sdk-6.1.4.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "max-sdk-6.1.4.xcconfig"; sourceTree = "<group>"; };
 		2C50B789189BF129003FC744 /* cicm.leap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cicm.leap.cpp; sourceTree = "<group>"; };
-		2C50B791189BF3BA003FC744 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = "../../SDKs/LeapDeveloperKit/LeapSDK/lib/libc++/libLeap.dylib"; sourceTree = "<group>"; };
 		2C50B793189BF3C8003FC744 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Leap.h; path = ../../SDKs/LeapDeveloperKit/LeapSDK/include/Leap.h; sourceTree = "<group>"; };
+		2C6408F618A17A2400E376FF /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = ../../SDKs/LeapDeveloperKit/LeapSDK/lib/libLeap.dylib; sourceTree = "<group>"; };
 		2FBBEAE508F335360078DB84 /* cicm.leap.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cicm.leap.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,8 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6408F718A17A2400E376FF /* libLeap.dylib in Frameworks */,
 				2C1A10B4189EBCFF001D33B0 /* MaxAPI.framework in Frameworks */,
-				2C50B792189BF3BA003FC744 /* libLeap.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +63,8 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2C6408F618A17A2400E376FF /* libLeap.dylib */,
 				2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */,
-				2C50B791189BF3BA003FC744 /* libLeap.dylib */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -199,6 +199,8 @@
 			baseConfigurationReference = 2C50B787189BEEAE003FC744 /* max-sdk-6.1.4.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CXX0X_EXTENSIONS = NO;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -208,10 +210,14 @@
 					"/Users/elioton/Documents/programmation/CICM/SDKs/MaxSDK-6.1.4/c74support/max-includes/x64",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_REUSE_STRINGS = YES;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = NO;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib,
 					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib/libc++",
 				);
 				PRODUCT_NAME = cicm.leap;
@@ -223,6 +229,8 @@
 			baseConfigurationReference = 2C50B787189BEEAE003FC744 /* max-sdk-6.1.4.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CXX0X_EXTENSIONS = NO;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -231,10 +239,14 @@
 					"/Users/elioton/Documents/programmation/CICM/SDKs/MaxSDK-6.1.4/c74support/max-includes",
 					"/Users/elioton/Documents/programmation/CICM/SDKs/MaxSDK-6.1.4/c74support/max-includes/x64",
 				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_REUSE_STRINGS = YES;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = NO;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib,
 					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib/libc++",
 				);
 				PRODUCT_NAME = cicm.leap;

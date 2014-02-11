@@ -59,6 +59,8 @@ void cicmleap_assist(t_cicmleap *x, void *b, long m, long a, char *s);
 void cicmleap_bang(t_cicmleap *x);
 
 t_max_err attrset_bgtracking(t_cicmleap *x, t_object *attr, long argc, t_atom *argv);
+t_max_err attrset_gestureAttrs(t_cicmleap *x, t_object *attr, long argc, t_atom *argv);
+
 
 //////////////////////// global class pointer variable
 void *cicmleap_class;
@@ -81,6 +83,17 @@ public:
 		controller.enableGesture(Leap::Gesture::TYPE_KEY_TAP);
 		controller.enableGesture(Leap::Gesture::TYPE_SCREEN_TAP);
 		controller.enableGesture(Leap::Gesture::TYPE_SWIPE);
+		
+		const std::string key = "gesture.Circle.MinRadius";
+		//		x->leap->config().save();
+		post("gesture.Circle.MinRadius = %f", controller.config().getFloat(key));
+		controller.config().setFloat(key, 12);
+		//bool success = x->leap->config().setFloat(key, x->gestureCircleMinRadius);
+		bool successSave = controller.config().save();
+		//post("success = %ld", success);
+		post("successSave = %ld", successSave);
+		post("gesture.Circle.MinRadius = %f", controller.config().getFloat(key));
+		x->gestureCircleMinRadius = controller.config().getFloat(key);
 		
 		if (controller.policyFlags() != Leap::Controller::POLICY_BACKGROUND_FRAMES)
 		{
@@ -672,52 +685,52 @@ int C74_EXPORT main(void)
 	CLASS_STICKY_ATTR(c, "category", 0, "gesture config");
 
 	CLASS_ATTR_FLOAT            (c, "circle_minradius", 0, t_cicmleap, gestureCircleMinRadius);
-	//CLASS_ATTR_ACCESSORS		(c, "circle_minradius", NULL, attrset_circle_minradius);
+	CLASS_ATTR_ACCESSORS		(c, "circle_minradius", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "circle_minradius", 0, "Circle Gesture Min Radius (mm)");
     CLASS_ATTR_SAVE             (c, "circle_minradius", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "circle_minarc", 0, t_cicmleap, gestureCircleMinArc);
-	//CLASS_ATTR_ACCESSORS		(c, "circle_minarc", NULL, attrset_circle_minarc);
+	CLASS_ATTR_ACCESSORS		(c, "circle_minarc", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "circle_minarc", 0, "Circle Gesture Min Arc (radian)");
     CLASS_ATTR_SAVE             (c, "circle_minarc", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "swipe_minlength", 0, t_cicmleap, gestureSwipeMinLength);
-	//CLASS_ATTR_ACCESSORS		(c, "swipe_minlength", NULL, attrset_swipe_minlength);
+	CLASS_ATTR_ACCESSORS		(c, "swipe_minlength", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "swipe_minlength", 0, "Swipe Gesture Min Length (mm)");
     CLASS_ATTR_SAVE             (c, "swipe_minlength", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "swipe_minvelocity", 0, t_cicmleap, gestureSwipeMinVelocity);
-	//CLASS_ATTR_ACCESSORS		(c, "swipe_minvelocity", NULL, attrset_swipe_minvelocity);
+	CLASS_ATTR_ACCESSORS		(c, "swipe_minvelocity", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "swipe_minvelocity", 0, "Swipe Gesture Min Velocity (mm/s)");
     CLASS_ATTR_SAVE             (c, "swipe_minvelocity", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "keytap_mindownvelocity", 0, t_cicmleap, gestureKeyTapMinDownVelocity);
-	//CLASS_ATTR_ACCESSORS		(c, "keytap_mindownvelocity", NULL, attrset_keytap_mindownvelocity);
+	CLASS_ATTR_ACCESSORS		(c, "keytap_mindownvelocity", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "keytap_mindownvelocity", 0, "Key Tap Gesture Min Down Velocity (mm/s)");
     CLASS_ATTR_SAVE             (c, "keytap_mindownvelocity", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "keytap_historyseconds", 0, t_cicmleap, gestureKeyTapHistorySeconds);
-	//CLASS_ATTR_ACCESSORS		(c, "keytap_historyseconds", NULL, attrset_keytap_historyseconds);
+	CLASS_ATTR_ACCESSORS		(c, "keytap_historyseconds", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "keytap_historyseconds", 0, "Key Tap Gesture History Seconds (s)");
     CLASS_ATTR_SAVE             (c, "keytap_historyseconds", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "keytap_mindistance", 0, t_cicmleap, gestureKeyTapMinDistance);
-	//CLASS_ATTR_ACCESSORS		(c, "keytap_mindistance", NULL, attrset_keytap_mindistance);
+	CLASS_ATTR_ACCESSORS		(c, "keytap_mindistance", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "keytap_mindistance", 0, "Key Tap Gesture Min Distance (mm)");
     CLASS_ATTR_SAVE             (c, "keytap_mindistance", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "screentap_minforwardvelocity", 0, t_cicmleap, gestureScreenTapMinForwardVelocity);
-	//CLASS_ATTR_ACCESSORS		(c, "screentap_minforwardvelocity", NULL, attrset_screentap_minforwardvelocity);
+	CLASS_ATTR_ACCESSORS		(c, "screentap_minforwardvelocity", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "screentap_minforwardvelocity", 0, "Screen Tap Gesture Min Forward Velocity (mm/s)");
     CLASS_ATTR_SAVE             (c, "screentap_minforwardvelocity", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "screentap_historyseconds", 0, t_cicmleap, gestureScreenTapHistorySeconds);
-	//CLASS_ATTR_ACCESSORS		(c, "screentap_historyseconds", NULL, attrset_screentap_historyseconds);
+	CLASS_ATTR_ACCESSORS		(c, "screentap_historyseconds", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "screentap_historyseconds", 0, "Screen Tap Gesture History Seconds (s)");
     CLASS_ATTR_SAVE             (c, "screentap_historyseconds", 1);
 	
 	CLASS_ATTR_FLOAT            (c, "screentap_mindistance", 0, t_cicmleap, gestureScreenTapMinDistance);
-	//CLASS_ATTR_ACCESSORS		(c, "screentap_mindistance", NULL, attrset_screentap_mindistance);
+	CLASS_ATTR_ACCESSORS		(c, "screentap_mindistance", NULL, attrset_gestureAttrs);
 	CLASS_ATTR_LABEL			(c, "screentap_mindistance", 0, "Screen Tap Gesture Min Distance (mm)");
     CLASS_ATTR_SAVE             (c, "screentap_mindistance", 1);
 
@@ -727,6 +740,81 @@ int C74_EXPORT main(void)
 	cicmleap_class = c;
 
 	return 0;
+}
+
+t_max_err attrset_gestureAttrs(t_cicmleap *x, t_object *attr, long argc, t_atom *argv)
+{
+	t_symbol *name = (t_symbol *)object_method(attr, gensym("getname"));
+	if (name == gensym("circle_minradius"))
+	{
+		const std::string key = "gesture.Circle.MinRadius";
+//		x->leap->config().setFloat(key, atom_getfloat(argv));
+//		x->leap->config().save();
+//		post("---attr---");
+//		post("gesture.Circle.MinRadius = %f", x->leap->config().getFloat(key));
+//		bool success = x->leap->config().setFloat(key, atom_getfloat(argv));
+//		bool successSave = x->leap->config().save();
+//		post("success = %ld", success);
+//		post("successSave = %ld", successSave);
+//		post("gesture.Circle.MinRadius = %f", x->leap->config().getFloat(key));
+//		x->gestureCircleMinRadius = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("circle_minarc"))
+	{
+		std::string key = "gesture.Circle.MinArc";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureCircleMinArc = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("swipe_minlength"))
+	{
+		std::string key = "gesture.Swipe.MinLength";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureSwipeMinLength = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("swipe_minvelocity"))
+	{
+		std::string key = "gesture.Swipe.MinVelocity";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureSwipeMinVelocity = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("keytap_mindownvelocity"))
+	{
+		std::string key = "gesture.KeyTap.MinDownVelocity";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureKeyTapMinDownVelocity = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("keytap_historyseconds"))
+	{
+		std::string key = "gesture.KeyTap.HistorySeconds";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureKeyTapHistorySeconds = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("keytap_mindistance"))
+	{
+		std::string key = "gesture.KeyTap.MinDistance";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureKeyTapMinDistance = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("screentap_minforwardvelocity"))
+	{
+		std::string key = "gesture.ScreenTap.MinForwardVelocity";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureScreenTapMinForwardVelocity = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("screentap_historyseconds"))
+	{
+		std::string key = "gesture.ScreenTap.HistorySeconds";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->gestureScreenTapHistorySeconds = x->leap->config().getFloat(key);
+	}
+	else if (name == gensym("screentap_mindistance"))
+	{
+		std::string key = "gesture.ScreenTap.MinDistance";
+		x->leap->config().setFloat(key, atom_getfloat(argv));
+		x->leap->config().save();
+		x->gestureScreenTapMinDistance = x->leap->config().getFloat(key);
+	}
+	return MAX_ERR_NONE;
 }
 
 t_max_err attrset_bgtracking(t_cicmleap *x, t_object *attr, long argc, t_atom *argv)

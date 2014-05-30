@@ -8,7 +8,7 @@
 			"architecture" : "x64"
 		}
 ,
-		"rect" : [ 0.0, 44.0, 1196.0, 806.0 ],
+		"rect" : [ 0.0, 44.0, 808.0, 806.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -71,127 +71,6 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-70",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "float", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 349.0, 756.0, 50.0, 20.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-68",
-									"maxclass" : "newobj",
-									"numinlets" : 6,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 280.390625, 721.141479, 139.0, 20.0 ],
-									"text" : "scale 0. 440. 100. 1000."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-67",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 271.78125, 768.0, 32.5, 20.0 ],
-									"text" : "*~ 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-64",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 271.78125, 802.858521, 68.0, 20.0 ],
-									"text" : "cycle~ 100"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-63",
-									"maxclass" : "gain~",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "signal", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 271.78125, 845.0, 156.21875, 18.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bordercolor" : [ 0.5, 0.5, 0.5, 1.0 ],
-									"id" : "obj-28",
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 271.78125, 876.141479, 45.0, 45.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-29",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "float", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 645.0, 733.0, 50.0, 20.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-27",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 675.395813, 783.0, 32.5, 20.0 ],
-									"text" : "* 1."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-23",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "float" ],
-									"patching_rect" : [ 575.083313, 783.0, 32.5, 20.0 ],
-									"text" : "* 1."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -241,35 +120,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 566.333313, 628.0, 75.0, 20.0 ],
 									"text" : "speedlim 10"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 564.833313, 833.0, 126.0, 20.0 ],
-									"text" : "pak source 0 car 0. 0."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-4",
-									"maxclass" : "hoa.2d.map",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "list", "list", "list" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 823.0, 621.141479, 300.0, 300.0 ]
 								}
 
 							}
@@ -1059,7 +909,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 454.84375, 621.141479, 50.0, 20.0 ]
+									"patching_rect" : [ 618.833313, 521.141479, 50.0, 20.0 ]
 								}
 
 							}
@@ -1526,64 +1376,10 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-68", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-22", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 3 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-23", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-24", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 4 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-27", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-23", 1 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-29", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-27", 1 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-29", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -1638,15 +1434,6 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-44", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -1724,51 +1511,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-28", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-63", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-63", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-64", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-64", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-67", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-67", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-68", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-70", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-68", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1800,15 +1542,6 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -1850,7 +1583,7 @@
 							"architecture" : "x64"
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1196.0, 780.0 ],
+						"rect" : [ 0.0, 26.0, 808.0, 780.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2775,7 +2508,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "circle_minradius",
+									"attr" : "circle_minarc",
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-64",
@@ -2997,7 +2730,7 @@
 							"architecture" : "x64"
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1196.0, 780.0 ],
+						"rect" : [ 0.0, 26.0, 808.0, 780.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4893,58 +4626,54 @@
 		"dependency_cache" : [ 			{
 				"name" : "Leap_Gesture_Swipe.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Leap_Gesture_Tap2.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Leap_Gesture_Tap.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "cicm.helpheader.maxpat",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/patchers",
-				"patcherrelativepath" : "../patchers",
+				"patcherrelativepath" : "../cicm.leap/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Leap_horizontalViewAngle.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Leap_InteractionBox.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Leap_verticalViewAngle.png",
 				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/Leapmotion/cicm.leap/misc",
-				"patcherrelativepath" : "../misc",
+				"patcherrelativepath" : "../cicm.leap/misc",
 				"type" : "PNG ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "cicm.leap.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "hoa.2d.map.mxo",
 				"type" : "iLaX"
 			}
  ]

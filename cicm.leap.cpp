@@ -1,4 +1,5 @@
 /**
+ Max Object based on the Leap SDK 2.0.1
 */
 
 #include "ext.h"
@@ -744,10 +745,13 @@ int C74_EXPORT main(void)
 
 t_max_err attrset_gestureAttrs(t_cicmleap *x, t_object *attr, long argc, t_atom *argv)
 {
+	Leap::Config config = Leap::Config();
+	long err = 0;
 	t_symbol *name = (t_symbol *)object_method(attr, gensym("getname"));
+	post("name attr = %s", name->s_name);
 	if (name == gensym("circle_minradius"))
 	{
-		const std::string key = "gesture.Circle.MinRadius";
+		const std::string key = "Gesture.Circle.MinRadius";
 //		x->leap->config().setFloat(key, atom_getfloat(argv));
 //		x->leap->config().save();
 //		post("---attr---");
@@ -761,9 +765,15 @@ t_max_err attrset_gestureAttrs(t_cicmleap *x, t_object *attr, long argc, t_atom 
 	}
 	else if (name == gensym("circle_minarc"))
 	{
-		std::string key = "gesture.Circle.MinArc";
-		x->leap->config().setFloat(key, atom_getfloat(argv));
+		std::string key = "gesture.circle.minArc";
+		post("gesture.Circle.MinArc get = %f", x->leap->config().getFloat(key));
+		//err = x->leap->config().setFloat(key, (float)atom_getfloat(argv));
+		err = x->leap->config().setFloat(key, 10.f);
+		
+		x->leap->config().save();
+		post("gesture.Circle.MinArc set = %ld", err);
 		x->gestureCircleMinArc = x->leap->config().getFloat(key);
+		post("gesture.Circle.MinArc get = %f", x->leap->config().getFloat(key));
 	}
 	else if (name == gensym("swipe_minlength"))
 	{
@@ -867,7 +877,7 @@ void *cicmleap_new(t_symbol *s, long argc, t_atom *argv)
     
 	if ( (x = (t_cicmleap *)object_alloc((t_class *)cicmleap_class)) )
 	{
-		object_post((t_object *)x, "cicm.leap 0.1 (Leap v1.0.9)");
+		object_post((t_object *)x, "cicm.leap 0.2 (Leap v2.0.1)");
 		
 		x->enableBgTracking = 1;
 		

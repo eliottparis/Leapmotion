@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C1A10B4189EBCFF001D33B0 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */; };
+		2C2AE9B11938D26800BFDCE4 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2AE9B01938D26800BFDCE4 /* libLeap.dylib */; };
+		2C2AE9B21938D27100BFDCE4 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C2AE9B01938D26800BFDCE4 /* libLeap.dylib */; };
+		2C2AE9B41938D31200BFDCE4 /* Leap.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2AE9B31938D31200BFDCE4 /* Leap.h */; };
 		2C50B78A189BF129003FC744 /* cicm.leap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C50B789189BF129003FC744 /* cicm.leap.cpp */; };
-		2C50B795189BF3C8003FC744 /* Leap.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C50B793189BF3C8003FC744 /* Leap.h */; };
-		2C6408F718A17A2400E376FF /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6408F618A17A2400E376FF /* libLeap.dylib */; };
-		2C6408F818A17B6700E376FF /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C6408F618A17A2400E376FF /* libLeap.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +21,7 @@
 			dstPath = Contents/MacOS;
 			dstSubfolderSpec = 1;
 			files = (
-				2C6408F818A17B6700E376FF /* libLeap.dylib in CopyFiles */,
+				2C2AE9B21938D27100BFDCE4 /* libLeap.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29,10 +29,10 @@
 
 /* Begin PBXFileReference section */
 		2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../SDKs/MaxSDK-6.1.4/c74support/max-includes/x64/MaxAPI.framework"; sourceTree = "<group>"; };
+		2C2AE9B01938D26800BFDCE4 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = "../../SDKs/LeapSDK/lib/libc++/libLeap.dylib"; sourceTree = "<group>"; };
+		2C2AE9B31938D31200BFDCE4 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Leap.h; path = ../../SDKs/LeapSDK/include/Leap.h; sourceTree = "<group>"; };
 		2C50B787189BEEAE003FC744 /* max-sdk-6.1.4.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "max-sdk-6.1.4.xcconfig"; sourceTree = "<group>"; };
 		2C50B789189BF129003FC744 /* cicm.leap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cicm.leap.cpp; sourceTree = "<group>"; };
-		2C50B793189BF3C8003FC744 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Leap.h; path = ../../SDKs/LeapDeveloperKit/LeapSDK/include/Leap.h; sourceTree = "<group>"; };
-		2C6408F618A17A2400E376FF /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = ../../SDKs/LeapDeveloperKit/LeapSDK/lib/libLeap.dylib; sourceTree = "<group>"; };
 		2FBBEAE508F335360078DB84 /* cicm.leap.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cicm.leap.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C6408F718A17A2400E376FF /* libLeap.dylib in Frameworks */,
+				2C2AE9B11938D26800BFDCE4 /* libLeap.dylib in Frameworks */,
 				2C1A10B4189EBCFF001D33B0 /* MaxAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +63,7 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2C6408F618A17A2400E376FF /* libLeap.dylib */,
+				2C2AE9B01938D26800BFDCE4 /* libLeap.dylib */,
 				2C1A10B3189EBCFF001D33B0 /* MaxAPI.framework */,
 			);
 			name = "External Frameworks and Libraries";
@@ -72,7 +72,7 @@
 		08FB77ADFE841716C02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2C50B793189BF3C8003FC744 /* Leap.h */,
+				2C2AE9B31938D31200BFDCE4 /* Leap.h */,
 				2C50B789189BF129003FC744 /* cicm.leap.cpp */,
 			);
 			name = Source;
@@ -93,7 +93,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C50B795189BF3C8003FC744 /* Leap.h in Headers */,
+				2C2AE9B41938D31200BFDCE4 /* Leap.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +217,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib,
-					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib/libc++",
+					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapSDK/lib/libc++",
 				);
 				PRODUCT_NAME = cicm.leap;
 			};
@@ -246,8 +245,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib,
-					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapDeveloperKit/LeapSDK/lib/libc++",
+					"/Users/elioton/Documents/programmation/CICM/SDKs/LeapSDK/lib/libc++",
 				);
 				PRODUCT_NAME = cicm.leap;
 			};
